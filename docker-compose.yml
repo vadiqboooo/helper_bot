@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  telegram-bot:
+    build: .
+    container_name: helper_bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      # Сохраняем базу данных между перезапусками
+      - ./homework_bot.db:/app/homework_bot.db
+    environment:
+      # Переменные окружения (берутся из .env)
+      - BOT_TOKEN=${BOT_TOKEN}
+      - ADMIN_ID=${ADMIN_ID}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+    # Логирование
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
