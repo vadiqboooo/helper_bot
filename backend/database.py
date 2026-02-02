@@ -51,7 +51,9 @@ class Homework(Base):
 
 
 # Создание движка БД
-engine = create_engine('sqlite:///homework_bot.db', echo=False)
+import os
+DB_PATH = os.getenv('DB_PATH', '/app/data/homework_bot.db')
+engine = create_engine(f'sqlite:///{DB_PATH}', echo=False)
 
 # Создание таблиц
 Base.metadata.create_all(engine)

@@ -9,7 +9,7 @@ services:
       - .env
     volumes:
       # Сохраняем базу данных между перезапусками
-      - ./homework_bot.db:/app/homework_bot.db
+      - ./data:/app/data
     environment:
       # Переменные окружения (берутся из .env)
       - BOT_TOKEN=${BOT_TOKEN}
