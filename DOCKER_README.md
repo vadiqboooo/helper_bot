@@ -55,7 +55,7 @@ docker compose version
 ### 3. Запустите бота
 ```bash
 # Собрать и запустить контейнер
-docker-compose up -d
+docker compose up -d
 
 # Посмотреть логи
 docker-compose logs -f
