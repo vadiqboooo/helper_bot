@@ -58,7 +58,7 @@ docker compose version
 docker compose up -d
 
 # Посмотреть логи
-docker-compose logs -f
+docker compose logs -f
 
 # Остановить бота
 docker-compose down

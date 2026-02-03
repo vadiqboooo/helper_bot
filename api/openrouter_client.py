@@ -26,8 +26,8 @@ class OpenRouterClient:
             base_url="https://openrouter.ai/api/v1",
             api_key=self.api_key,
         )
-        # Используем GPT OSS 120B (бесплатная модель)
-        self.model = "openai/gpt-oss-120b:free"
+        # Используем Qwen3 Coder
+        self.model = "qwen/qwen3-coder"
 
     def analyze_code(self, task_id: int, task_description: str, user_code: str) -> str:
         """
